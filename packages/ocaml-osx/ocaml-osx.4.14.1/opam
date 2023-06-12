@@ -9,10 +9,10 @@ remove: [
 depends: [
   "ocaml"
   "conf-clang-osx"
-  "ocaml-osx-i64" {= "4.14.1"} | "ocaml-osx-a64" {= "4.14.1"}
+  ("ocaml-osx-i64" {= version} | "ocaml-osx-a64" {= version})
 ]
 synopsis: "A meta-package depending on any OCaml 64-bit OSX cross-compiler"
 extra-files: [
-  ["remove.sh" "md5=871758a71eca37824ee76a6cba004ab1"]
-  ["install.sh" "md5=2cf95269f21e151d375459f112abe075"]
+  ["remove.sh" "md5=5bfce83b4866826b27d38aee7b7f34a5"]
+  ["install.sh" "md5=91af927717fe6b01b8877eab86da9340"]
 ]

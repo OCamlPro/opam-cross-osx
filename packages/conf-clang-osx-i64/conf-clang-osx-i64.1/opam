@@ -2,8 +2,7 @@ opam-version: "2.0"
 maintainer: "david.declerck@ocamlpro.com"
 build: [
   ["sh" "-exc" "${TOOLPREFI64-o64-}clang --version"]
-  ["sh" "-c" "echo \"prefix: \\\"`${TOOLPREFI64-o64-}clang -dumpmachine`-\\\"\" >conf-clang-osx-i64.config"]
-  ["sh" "-c" "echo \"host: \\\"`${TOOLPREFI64-o64-}clang -dumpmachine`\\\"\" >>conf-clang-osx-i64.config"]
+  ["sh" "-c" "echo \"host: \\\"`${TOOLPREFI64-o64-}clang -dumpmachine`\\\"\" > conf-clang-osx-i64.config"]
 ]
 synopsis:
   "Virtual package specifying the location of Clang cross-compiler for Intel 64-bit OSX"

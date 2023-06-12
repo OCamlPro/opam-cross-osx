@@ -3,7 +3,7 @@
 set -e
 
 OPAM_PREFIX="$1"
-PREFIX="$2"
+CC="$2"
 HOST="$3"
 
 OPTS=""
@@ -12,7 +12,7 @@ if [ `opam var conf-flambda-osx:installed` = "true" ]; then
   OPTS="--enable-flambda"
 fi
 
-CC="${PREFIX}clang" ./configure --host=$HOST --prefix="${OPAM_PREFIX}/osx-sysroot" --enable-systhreads ${OPTS}
+CC=${CC} ./configure --host=$HOST --prefix="${OPAM_PREFIX}/osx-sysroot" --enable-systhreads ${OPTS}
 
 make -C runtime sak SAK_CC=cc SAK_CFLAGS= SAK_LINK='cc -o $(1) $(2)'
 
