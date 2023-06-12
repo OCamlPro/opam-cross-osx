@@ -28,6 +28,10 @@ If desired, request the compiler to be built with [flambda][] optimizers:
 
 [flambda]: https://caml.inria.fr/pub/docs/manual-ocaml/flambda.html
 
+Ensure the C toolchain is visible in the PATH:
+
+    PATH=/usr/local/osxcross/bin:$PATH
+
 Install the compiler:
 
     opam install ocaml-osx
