@@ -9,39 +9,25 @@ homepage: "https://github.com/ocaml/Zarith"
 bug-reports: "https://github.com/ocaml/Zarith/issues"
 dev-repo: "git+https://github.com/ocaml/Zarith.git"
 build: [
-  [
-    "sh" "-exc"
-    "PATH=%{prefix}%/osx-sysroot/bin:$PATH CC=${TOOLPREF64-x86_64-w64-mingw32-}gcc ./configure --installdir %{prefix}%/osx-sysroot/lib"
-] {os != "openbsd" & os != "freebsd" & os != "macos"}
-  [
-    "sh"
-    "-exc"
-    "LDFLAGS=\"$LDFLAGS -L/usr/local/lib\" CFLAGS=\"$CFLAGS -I/usr/local/include\" ./configure"
-  ] {os = "openbsd" | os = "freebsd"}
-  [
-    "sh"
-    "-exc"
-    "LDFLAGS=\"$LDFLAGS -L/opt/local/lib -L/usr/local/lib\" CFLAGS=\"$CFLAGS -I/opt/local/include -I/usr/local/include\" ./configure"
-  ] {os = "macos" & os-distribution != "homebrew"}
-  [
-    "sh"
-    "-exc"
-    "LDFLAGS=\"$LDFLAGS -L/opt/local/lib -L/usr/local/lib\" CFLAGS=\"$CFLAGS -I/opt/local/include -I/usr/local/include\" ./configure"
-  ] {os = "macos" & os-distribution = "homebrew" & arch = "x86_64" }
-  [
-    "sh"
-    "-exc"
-    "LDFLAGS=\"$LDFLAGS -L/opt/homebrew/lib\" CFLAGS=\"$CFLAGS -I/opt/homebrew/include\" ./configure"
-  ] {os = "macos" & os-distribution = "homebrew" & arch = "arm64" }
-  [ "sh" "-exc" "PATH=%{prefix}%/osx-sysroot/bin:$PATH %{make}%" ]
+  [ "sh" "-exc" "CC=%{conf-clang-osx:prefix}%clang CFLAGS=\"$CFLAGS $(omp --cflags gmp)\" LDFLAGS=\"$LDFLAGS $(omp --ldflags gmp)\" OCAMLFIND_TOOLCHAIN=osx ./configure --installdir %{prefix}%/osx-sysroot/lib --ocamllibdir %{prefix}%/osx-sysroot/lib/ocaml" ]
+  [ "sh" "-exc" "OCAMLFIND_TOOLCHAIN=osx make" ]
 ]
 install: [
   [make "install"]
 ]
 depends: [
+  "conf-clang-osx"
   "ocaml-osx"     {>= "4.04.0"}
   "ocamlfind"
-  "conf-gmp"
+]
+depexts: [
+  ["gmp"] {os-distribution = "omp"}
+]
+extra-files: [
+  "patches/configure.patch" "md5=877c7c942f3711c2c1b5a3f3288a7073"
+]
+patches: [
+  "patches/configure.patch"
 ]
 synopsis:
   "Implements arithmetic and logical operations over arbitrary-precision integers"
