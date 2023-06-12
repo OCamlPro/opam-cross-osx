@@ -34,11 +34,11 @@ build: [
     "dune"
     "build"
     "-p"
-    toml
+    "toml"
     "-j"
     jobs
     "-x"
-    osx
+    "osx"
     "@install"
   ]
 ]
