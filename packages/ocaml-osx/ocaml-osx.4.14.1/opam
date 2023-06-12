@@ -1,0 +1,18 @@
+opam-version: "2.0"
+maintainer: "david.declerck@ocamlpro.com"
+install: [
+  ["./install.sh" "%{prefix}%" "%{conf-clang-osx:host}%"]
+]
+remove: [
+  ["./remove.sh" "%{prefix}%" "%{conf-clang-osx:host}%"]
+]
+depends: [
+  "ocaml"
+  "conf-clang-osx"
+  "ocaml-osx-i64" {= "4.14.1"} | "ocaml-osx-a64" {= "4.14.1"}
+]
+synopsis: "A meta-package depending on any OCaml 64-bit OSX cross-compiler"
+extra-files: [
+  ["remove.sh" "md5=871758a71eca37824ee76a6cba004ab1"]
+  ["install.sh" "md5=2cf95269f21e151d375459f112abe075"]
+]

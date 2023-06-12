@@ -1,0 +1,10 @@
+opam-version: "2.0"
+maintainer: "david.declerck@ocamlpro.com"
+build: [
+  ["sh" "-exc" "${TOOLPREFA64-oa64-}clang --version"]
+  ["sh" "-c" "echo \"prefix: \\\"`${TOOLPREFA64-oa64-}clang -dumpmachine`-\\\"\" >conf-clang-osx-a64.config"]
+  ["sh" "-c" "echo \"host: \\\"`${TOOLPREFA64-oa64-}clang -dumpmachine`\\\"\" >>conf-clang-osx-a64.config"]
+]
+synopsis:
+  "Virtual package specifying the location of Clang cross-compiler for Intel 64-bit OSX"
+depends: ["ocaml"]

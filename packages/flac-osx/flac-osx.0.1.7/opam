@@ -1,0 +1,30 @@
+opam-version: "2.0"
+maintainer: "Romain Beauxis <toots@rastageeks.org>"
+authors: "The Savonet Team <savonet-users@lists.sourceforge.net>"
+homepage: "https://github.com/savonet/ocaml-flac"
+build: [
+  ["./configure" "--host=%{conf-clang-osx:host}%" "--prefix=%{prefix}%" "OCAMLFIND_TOOLCHAIN=osx"]
+  [make]
+]
+install: [
+  ["env" "OCAMLFIND_TOOLCHAIN=osx"
+   make "install"]
+]
+remove: ["ocamlfind" "-toolchain" "osx" "remove" "flac"]
+depends: [
+  "ocaml-osx" {>= "4.03"}
+  "ocamlfind" {build}
+  "ogg-osx"
+]
+bug-reports: "https://github.com/savonet/ocaml-flac/issues"
+dev-repo: "git+https://github.com/savonet/ocaml-flac.git"
+synopsis:
+  "Interface for the Free Lossless Audio Codec otherwise known as FLAC"
+url {
+  src:
+    "https://github.com/savonet/ocaml-flac/releases/download/v0.1.7/ocaml-flac-0.1.7.tar.gz"
+  checksum: "md5=86b769274b6d831778bc24bda2233db0"
+}
+depexts: [
+  ["flac"] {os-distribution = "mxe"}
+]

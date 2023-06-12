@@ -1,0 +1,63 @@
+opam-version: "2.0"
+maintainer: "Jane Street developers"
+authors: ["Jane Street Group, LLC"]
+homepage: "https://github.com/janestreet/ppx_jane"
+bug-reports: "https://github.com/janestreet/ppx_jane/issues"
+dev-repo: "git+https://github.com/janestreet/ppx_jane.git"
+doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/ppx_jane/index.html"
+license: "MIT"
+build: [
+  ["dune" "build" "-p" "ppx_jane" "-j" jobs "-x" "osx"]
+]
+depends: [
+  "ocaml-osx"             {>= "4.04.2"}
+  "base_quickcheck"   {>= "v0.14" & < "v0.15"}
+  "base_quickcheck-osx"   {>= "v0.14" & < "v0.15"}
+  "ppx_assert-osx"        {>= "v0.14" & < "v0.15"}
+  "ppx_base"          {>= "v0.14" & < "v0.15"}
+  "ppx_base-osx"          {>= "v0.14" & < "v0.15"}
+  "ppx_bench"         {>= "v0.14" & < "v0.15"}
+  "ppx_bench-osx"         {>= "v0.14" & < "v0.15"}
+  "ppx_bin_prot"      {>= "v0.14" & < "v0.15"}
+  "ppx_bin_prot-osx"      {>= "v0.14" & < "v0.15"}
+  "ppx_custom_printf-osx" {>= "v0.14" & < "v0.15"}
+  "ppx_expect"        {>= "v0.14" & < "v0.15"}
+  "ppx_expect-osx"        {>= "v0.14" & < "v0.15"}
+  "ppx_fields_conv-osx"   {>= "v0.14" & < "v0.15"}
+  "ppx_fixed_literal"
+  "ppx_fixed_literal-osx"
+  "ppx_here-osx"          {>= "v0.14" & < "v0.15"}
+  "ppx_inline_test-osx"   {>= "v0.14" & < "v0.15"}
+  "ppx_let"           {>= "v0.14" & < "v0.15"}
+  "ppx_let-osx"           {>= "v0.14" & < "v0.15"}
+  "ppx_module_timer"  {>= "v0.14" & < "v0.15"}
+  "ppx_module_timer-osx"  {>= "v0.14" & < "v0.15"}
+  "ppx_optcomp-osx"       {>= "v0.14" & < "v0.15"}
+  "ppx_optional"      {>= "v0.14" & < "v0.15"}
+  "ppx_optional-osx"      {>= "v0.14" & < "v0.15"}
+  "ppx_pipebang"      {>= "v0.14" & < "v0.15"}
+  "ppx_pipebang-osx"      {>= "v0.14" & < "v0.15"}
+  "ppx_sexp_message"  {>= "v0.14" & < "v0.15"}
+  "ppx_sexp_message-osx"  {>= "v0.14" & < "v0.15"}
+  "ppx_sexp_value"    {>= "v0.14" & < "v0.15"}
+  "ppx_sexp_value-osx"    {>= "v0.14" & < "v0.15"}
+  "ppx_stable"        {>= "v0.14" & < "v0.15"}
+  "ppx_stable-osx"        {>= "v0.14" & < "v0.15"}
+  "ppx_string"        {>= "v0.14" & < "v0.15"}
+  "ppx_string-osx"        {>= "v0.14" & < "v0.15"}
+  "ppx_typerep_conv"  {>= "v0.14" & < "v0.15"}
+  "ppx_typerep_conv-osx"  {>= "v0.14" & < "v0.15"}
+  "ppx_variants_conv-osx" {>= "v0.14" & < "v0.15"}
+  "dune"              {build & >= "2.0.0"}
+  "ppxlib"            {>= "0.11.0"}
+  "ppxlib-osx"            {>= "0.11.0"}
+]
+synopsis: "Standard Jane Street ppx rewriters"
+description: "
+This package installs a ppx-jane executable, which is a ppx driver
+including all standard Jane Street ppx rewriters.
+"
+url {
+  src: "https://ocaml.janestreet.com/ocaml-core/v0.14/files/ppx_jane-v0.14.0.tar.gz"
+  checksum: "md5=ce8e39f9fe7ddcaf821e468a27766083"
+}

@@ -1,0 +1,13 @@
+opam-version: "2.0"
+maintainer: "david.declerck@ocamlpro.com"
+build: [
+  ["./generate-config.sh" "%{conf-clang-osx-i64:prefix}%"] {conf-clang-osx-i64:installed}
+  ["./generate-config.sh" "%{conf-clang-osx-a64:prefix}%"] {conf-clang-osx-a64:installed}
+]
+depends: [
+  "ocaml"
+  ("conf-clang-osx-i64" | "conf-clang-osx-a64")
+]
+extra-files: [
+  "generate-config.sh" "md5=d1608ee89a5c794cbb099c24affd91d6"
+]

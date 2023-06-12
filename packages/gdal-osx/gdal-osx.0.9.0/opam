@@ -1,0 +1,27 @@
+opam-version: "2.0"
+maintainer: "whitequark@whitequark.org"
+build: [
+  ["env" "OCAMLFIND_TOOLCHAIN=osx"
+   "ocaml" "setup.ml" "-configure" "--prefix" "%{prefix}%/osx-sysroot"]
+  ["ocamlbuild" "-use-ocamlfind" "-just-plugin"]
+  ["env" "OCAMLFIND_TOOLCHAIN=osx"
+   "ocaml" "setup.ml" "-build"]
+  ["env" "OCAMLFIND_TOOLCHAIN=osx"
+   "ocaml" "setup.ml" "-install"]
+]
+remove: [["ocamlfind" "-toolchain" "osx" "remove" "gdal"]]
+depends: [
+  "ocaml"
+  "ocaml-osx"
+  "ctypes-osx"
+  "ocamlfind" {build}
+]
+synopsis: "Bindings to the GDAL and OGR libraries"
+flags: light-uninstall
+url {
+  src: "https://github.com/hcarty/ocaml-gdal/archive/v0.9.0.tar.gz"
+  checksum: "md5=496f9fb7a1b33dcd8a59efbf8cd62e37"
+}
+depexts: [
+  ["gdal"] {os-distribution = "mxe"}
+]

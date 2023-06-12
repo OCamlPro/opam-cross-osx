@@ -1,0 +1,41 @@
+opam-version: "2.0"
+maintainer: "opensource@janestreet.com"
+authors: ["Jane Street Group, LLC <opensource@janestreet.com>"]
+homepage: "https://github.com/janestreet/ppx_expect"
+bug-reports: "https://github.com/janestreet/ppx_expect/issues"
+dev-repo: "git+https://github.com/janestreet/ppx_expect.git"
+license: "Apache-2.0"
+build: [
+  ["jbuilder" "build" "-p" "ppx_expect" "-j" jobs "-x" "osx"]
+]
+conflicts: [ "jbuilder" { = "1.0+beta19" } ]
+depends: [
+  "ocaml" {>= "4.04.1"}
+  "base-osx" {>= "v0.11" & < "v0.12"}
+  "ppx_assert" {>= "v0.11" & < "v0.12"}
+  "ppx_assert-osx" {>= "v0.11" & < "v0.12"}
+  "ppx_compare-osx" {>= "v0.11" & < "v0.12"}
+  "ppx_custom_printf" {>= "v0.11" & < "v0.12"}
+  "ppx_custom_printf-osx" {>= "v0.11" & < "v0.12"}
+  "ppx_fields_conv" {>= "v0.11" & < "v0.12"}
+  "ppx_fields_conv-osx" {>= "v0.11" & < "v0.12"}
+  "ppx_here-osx" {>= "v0.11" & < "v0.12"}
+  "ppx_inline_test" {>= "v0.11" & < "v0.12"}
+  "ppx_inline_test-osx" {>= "v0.11" & < "v0.12"}
+  "ppx_sexp_conv-osx" {>= "v0.11" & < "v0.12"}
+  "ppx_variants_conv" {>= "v0.11" & < "v0.12"}
+  "ppx_variants_conv-osx" {>= "v0.11" & < "v0.12"}
+  "stdio-osx" {>= "v0.11" & < "v0.12"}
+  "jbuilder" {build & >= "1.0+beta18.1"}
+  "ocaml-migrate-parsetree-osx" {>= "1.0"}
+  "ppxlib-osx" {>= "0.1.0"}
+  "re-osx" {>= "1.5.0"}
+  "ocaml-osx"
+]
+synopsis: "Cram like framework for OCaml"
+description: "Part of the Jane Street's PPX rewriters collection."
+url {
+  src:
+    "https://ocaml.janestreet.com/ocaml-core/v0.11/files/ppx_expect-v0.11.0.tar.gz"
+  checksum: "md5=ee183ff3ca85954a84a54d32b8073546"
+}
