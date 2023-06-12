@@ -1,0 +1,37 @@
+opam-version: "2.0"
+maintainer: "david.declerck@ocamlpro.com"
+patches: [
+  "patches/ostype-fix.patch"
+]
+substs: [
+  "osx.conf"
+]
+build: [
+  ["/bin/sh" "./build.sh" "%{prefix}%" "%{conf-clang-osx:cc}%" "%{conf-clang-osx:host}%"]
+]
+install: [
+  ["/bin/sh" "./install.sh" "%{prefix}%"]
+]
+depends: [
+  "ocaml" {= version}
+  "ocamlfind" {>= "1.5.4"}
+  "conf-clang-osx"
+]
+depopts: [
+  "conf-flambda-osx"
+]
+available: arch = "x86_64" | (arch = "arm64" & os = "macos")
+conflicts: [
+  "ocaml-osx-i64"
+]
+synopsis: "OCaml cross-compiler for ARM 64-bit OSX targets"
+extra-files: [
+  ["osx.conf.in" "md5=78bcfd75764edd01d83c1a1d08ded2fd"]
+  ["build.sh" "md5=3026069500fab03a75373ac8100acf5e"]
+  ["install.sh" "md5=c08afd8e166a799d25ed86a6a48a7df7"]
+  ["patches/ostype-fix.patch" "md5=0da73e29a493025ed3cbbfb5226034e4"]
+]
+url {
+  src: "https://github.com/ocaml/ocaml/archive/4.14.1.tar.gz"
+  checksum: "md5=92e7b1f8acb2b2de5c63d93ed9e5cc21"
+}
