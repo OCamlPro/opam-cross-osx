@@ -1,0 +1,24 @@
+opam-version: "2.0"
+maintainer: "Gabriel Scherer <gabriel.scherer@gmail.com>"
+authors: ["Nicolas Pouillard" "Berke Durak"]
+homepage: "https://github.com/ocaml/ocamlbuild/"
+bug-reports: "https://github.com/ocaml/ocamlbuild/issues"
+license: "LGPL-2 with OCaml linking exception"
+doc: "https://github.com/ocaml/ocamlbuild/blob/master/manual/manual.adoc"
+dev-repo: "git+https://github.com/ocaml/ocamlbuild.git"
+build: [
+  [ "sh" "-c" "export PATH=\"%{prefix}%/osx-sysroot/bin:$PATH\" && %{make}% -f configure.make all OCAMLBUILD_PREFIX=%{prefix}%/osx-sysroot OCAMLBUILD_BINDIR=%{prefix}%/osx-sysroot/bin OCAMLBUILD_LIBDIR=%{prefix}%/osx-sysroot/lib OCAMLBUILD_MANDIR=%{prefix}%/osx-sysroot/man OCAML_NATIVE=true OCAML_NATIVE_TOOLS=false && %{make}% check-if-preinstalled byte native install-lib-opam"]
+]
+install: [
+  ["opam-installer" "-i" "--prefix" "%{prefix}%/osx-sysroot" "ocamlbuild.install"]
+]
+depends: [
+  "ocaml-osx" {>= "4.03" & < "4.08.0"}
+  "opam-installer" {build}
+]
+synopsis:
+  "OCamlbuild is a build system with builtin rules to easily build most OCaml projects."
+url {
+  src: "https://github.com/ocaml/ocamlbuild/archive/0.12.0.tar.gz"
+  checksum: "md5=442baa19470bd49150f153122e22907b"
+}
