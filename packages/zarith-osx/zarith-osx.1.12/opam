@@ -9,8 +9,15 @@ homepage: "https://github.com/ocaml/Zarith"
 bug-reports: "https://github.com/ocaml/Zarith/issues"
 dev-repo: "git+https://github.com/ocaml/Zarith.git"
 build: [
-  [ "sh" "-exc" "CC=%{conf-clang-osx:cc}% CFLAGS=\"$(%{conf-clang-osx:pkg-config}% --cflags gmp)\" LDFLAGS=\"$(%{conf-clang-osx:pkg-config}% --libs gmp)\" OCAMLFIND_TOOLCHAIN=osx ./configure --installdir %{ocaml-osx:sysroot}%/lib --ocamllibdir %{ocaml-osx:sysroot}%/lib/ocaml" ]
-  [ "sh" "-exc" "OCAMLFIND_TOOLCHAIN=osx make" ]
+  [ "env" "OCAMLFIND_TOOLCHAIN=osx"
+    "CC=%{conf-clang-osx:cc}%"
+    "CFLAGS=%{conf-clang-osx:pkg-config}% --cflags gmp"
+    "LDFLAGS=%{conf-clang-osx:pkg-config}% --libs gmp"
+    "INSTALL_DIR=%{ocaml-osx:sysroot}%/lib"
+    "OCAML_LIB_DIR=%{ocaml-osx:sysroot}%/lib/ocaml"
+    "sh" "-exc" "CFLAGS=`$CFLAGS` LDFLAGS=`$LDFLAGS` ./configure --installdir $INSTALL_DIR --ocamllibdir $OCAML_LIB_DIR" ]
+  [ "env" "OCAMLFIND_TOOLCHAIN=osx"
+    "sh" "-exc" "make" ]
 ]
 install: [
   [make "install"]
