@@ -18,7 +18,7 @@ depends: [
   "ogg-osx"
 ]
 depexts: [
-  ["speex"] {os-distribution = "mxe"}
+  ["speex"] {os-distribution = "omp"}
 ]
 bug-reports: "https://github.com/savonet/ocaml-speex/issues"
 dev-repo: "git+https://github.com/savonet/ocaml-speex.git"

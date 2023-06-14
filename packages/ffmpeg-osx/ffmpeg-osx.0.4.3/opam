@@ -21,7 +21,7 @@ depends: [
   "ocamlfind" {build}
 ]
 depexts: [
-  ["ffmpeg"] {os-distribution = "mxe"}
+  ["ffmpeg"] {os-distribution = "omp"}
 ]
 dev-repo: "git+https://github.com/savonet/ocaml-ffmpeg.git"
 url {

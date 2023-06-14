@@ -32,7 +32,7 @@ build: [
   ]
 ]
 depexts: [
-  ["libsrt"] {os-distribution = "mxe"}
+  ["libsrt"] {os-distribution = "omp"}
 ]
 dev-repo: "git+https://github.com/savonet/ocaml-srt.git"
 url {

@@ -30,7 +30,7 @@ build: [
 ]
 dev-repo: "git+https://github.com/savonet/ocaml-lame.git"
 depexts: [
-  ["lame"] {os-distribution = "mxe"}
+  ["lame"] {os-distribution = "omp"}
 ]
 url {
   src: "https://github.com/savonet/ocaml-lame/archive/v0.3.5.tar.gz"

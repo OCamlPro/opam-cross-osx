@@ -14,7 +14,7 @@ depends: [
   "dune-configurator"
 ]
 depexts: [
-  ["openssl"] {os-distribution = "mxe"}
+  ["openssl"] {os-distribution = "omp"}
 ]
 synopsis: "Bindings for OpenSSL"
 authors: "Samuel Mimram <samuel.mimram@ens-lyon.org>"

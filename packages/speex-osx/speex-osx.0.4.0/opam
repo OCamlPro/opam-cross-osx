@@ -28,7 +28,7 @@ build: [
   ]
 ]
 depexts: [
-  ["speex"] {os-distribution = "mxe"}
+  ["speex"] {os-distribution = "omp"}
 ]
 dev-repo: "git+https://github.com/savonet/ocaml-speex.git"
 url {

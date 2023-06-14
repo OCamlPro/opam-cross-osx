@@ -29,7 +29,7 @@ build: [
   ]
 ]
 depexts: [
-  ["opus"] {os-distribution = "mxe"}
+  ["opus"] {os-distribution = "omp"}
 ]
 dev-repo: "git+https://github.com/savonet/ocaml-opus.git"
 url {

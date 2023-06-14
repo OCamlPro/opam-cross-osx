@@ -28,7 +28,7 @@ build: [
   ]
 ]
 depexts: [
-  ["libmad"] {os-distribution = "mxe"}
+  ["libmad"] {os-distribution = "omp"}
 ]
 patches: [
   "patches/fix-discover.diff"

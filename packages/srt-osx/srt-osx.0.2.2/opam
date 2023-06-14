@@ -23,7 +23,7 @@ depends: [
   "posix-socket"
 ]
 depexts: [
-  ["libsrt"] {os-distribution = "mxe"}
+  ["libsrt"] {os-distribution = "omp"}
 ]
 build: [
   ["dune" "subst"] {dev}

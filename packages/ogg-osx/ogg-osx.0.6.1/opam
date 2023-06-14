@@ -19,7 +19,7 @@ depends: [
   "ocamlfind" {build}
 ]
 depexts: [
-  ["ogg"] {os-distribution = "mxe"}
+  ["ogg"] {os-distribution = "omp"}
 ]
 dev-repo: "git+https://github.com/savonet/ocaml-ogg.git"
 url {

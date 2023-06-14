@@ -33,7 +33,7 @@ build: [
   ]
 ]
 depexts: [
- ["taglib"] {os-distribution = "mxe"}
+ ["taglib"] {os-distribution = "omp"}
 ]
 dev-repo: "git+https://github.com/savonet/ocaml-taglib.git"
 url {

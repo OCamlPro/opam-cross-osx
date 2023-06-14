@@ -17,7 +17,7 @@ depends: [
   "ogg-osx"
 ]
 depexts: [
-  ["flac"] {os-distribution = "mxe"}
+  ["flac"] {os-distribution = "omp"}
 ]
 bug-reports: "https://github.com/savonet/ocaml-flac/issues"
 dev-repo: "git+https://github.com/savonet/ocaml-flac.git"

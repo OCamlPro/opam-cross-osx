@@ -23,7 +23,7 @@ depends: [
   "base-bytes"
 ]
 depexts: [
-  ["pcre"] {os-distribution = "mxe"}
+  ["pcre"] {os-distribution = "omp"}
 ]
 url {
   src:

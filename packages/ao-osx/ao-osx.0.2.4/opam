@@ -25,7 +25,7 @@ build: [
   ]
 ]
 depexts: [
-  ["dlfcn-win32" "libao"] {os-distribution = "mxe"}
+  ["dlfcn-win32" "libao"] {os-distribution = "omp"}
 ]
 dev-repo: "git+https://github.com/savonet/ocaml-ao.git"
 url {

@@ -21,7 +21,7 @@ depends: [
 ]
 depopts: ["lwt-osx" "lwt_ppx-osx"]
 depexts: [
-  ["curl"] {os-distribution = "mxe"}
+  ["curl"] {os-distribution = "omp"}
 ]
 extra-files: [
   "patches/00-use-ocamlfind.patch"

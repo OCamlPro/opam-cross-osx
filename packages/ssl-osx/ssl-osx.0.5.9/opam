@@ -25,5 +25,5 @@ url {
   ]
 }
 depexts: [
-  ["openssl"] {os-distribution = "mxe"}
+  ["openssl"] {os-distribution = "omp"}
 ]

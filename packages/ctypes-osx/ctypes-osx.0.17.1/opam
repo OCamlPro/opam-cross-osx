@@ -20,7 +20,7 @@ depends: [
    "ocamlfind" {build}
 ]
 depexts: [
-  ["libffi"] {os-distribution = "mxe"}
+  ["libffi"] {os-distribution = "omp"}
 ]
 extra-files: [
   ["libffi.config" "md5=5760278f4787f0c411caaeaf2a0746b0"]

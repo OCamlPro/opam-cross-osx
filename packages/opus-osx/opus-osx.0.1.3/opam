@@ -18,7 +18,7 @@ depends: [
   "ogg-osx"
 ]
 depexts: [
-  ["opus"] {os-distribution = "mxe"}
+  ["opus"] {os-distribution = "omp"}
 ]
 bug-reports: "https://github.com/savonet/ocaml-opus/issues"
 dev-repo: "git+https://github.com/savonet/ocaml-opus.git"

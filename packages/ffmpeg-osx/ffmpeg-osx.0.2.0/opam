@@ -27,5 +27,5 @@ url {
   checksum: "md5=f4315ab1e094196be6276517718ae370"
 }
 depexts: [
-  ["ffmpeg"] {os-distribution = "mxe"}
+  ["ffmpeg"] {os-distribution = "omp"}
 ]

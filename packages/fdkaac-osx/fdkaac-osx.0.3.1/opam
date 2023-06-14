@@ -20,7 +20,7 @@ depends: [
   "ocamlfind" {build}
 ]
 depexts: [
-  ["fdk-aac"] {os-distribution = "mxe"}
+  ["fdk-aac"] {os-distribution = "omp"}
 ]
 synopsis: "Fraunhofer FDK AAC Codec Library"
 description: """

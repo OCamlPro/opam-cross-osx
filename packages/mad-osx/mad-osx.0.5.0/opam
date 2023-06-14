@@ -30,7 +30,7 @@ build: [
 ]
 dev-repo: "git+https://github.com/savonet/ocaml-mad.git"
 depexts: [
-  ["libmad"] {os-distribution = "mxe"}
+  ["libmad"] {os-distribution = "omp"}
 ]
 extra-files: [
   ["patches/fix-discover.diff" "md5=e11f4c3c0405f662b71ca25841d0e8bc"]

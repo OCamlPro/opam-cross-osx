@@ -28,7 +28,7 @@ build: [
   ]
 ]
 depexts: [
-  ["portaudio"] {os-distribution = "mxe"}
+  ["portaudio"] {os-distribution = "omp"}
 ]
 dev-repo: "git+https://github.com/savonet/ocaml-portaudio.git"
 url {

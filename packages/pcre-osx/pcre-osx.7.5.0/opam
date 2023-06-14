@@ -29,7 +29,7 @@ build: [
   ]
 ]
 depexts: [
-  ["pcre"] {os-distribution = "mxe"}
+  ["pcre"] {os-distribution = "omp"}
 ]
 dev-repo: "git+https://github.com/mmottl/pcre-ocaml.git"
 url {

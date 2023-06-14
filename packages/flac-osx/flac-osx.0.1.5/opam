@@ -27,5 +27,5 @@ url {
   checksum: "md5=7f4ee8cbb681ae94d80890d37553c197"
 }
 depexts: [
-  ["flac"] {os-distribution = "mxe"}
+  ["flac"] {os-distribution = "omp"}
 ]

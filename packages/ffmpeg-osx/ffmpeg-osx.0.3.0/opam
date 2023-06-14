@@ -32,5 +32,5 @@ url {
 }
 
 depexts: [
-  ["ffmpeg"] {os-distribution = "mxe"}
+  ["ffmpeg"] {os-distribution = "omp"}
 ]

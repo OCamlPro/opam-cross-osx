@@ -28,7 +28,7 @@ build: [
 ]
 dev-repo: "git+https://github.com/savonet/ocaml-samplerate.git"
 depexts: [
-  ["libsamplerate"] {os-distribution = "mxe"}
+  ["libsamplerate"] {os-distribution = "omp"}
 ]
 url {
   src: "https://github.com/savonet/ocaml-samplerate/archive/v0.1.6.tar.gz"
