@@ -8,16 +8,18 @@ authors: [
 homepage: "https://github.com/ocaml/Zarith"
 bug-reports: "https://github.com/ocaml/Zarith/issues"
 dev-repo: "git+https://github.com/ocaml/Zarith.git"
+build-env: [
+  OCAMLFIND_TOOLCHAIN = "osx"
+]
 build: [
-  [ "env" "OCAMLFIND_TOOLCHAIN=osx"
-    "CC=%{conf-clang-osx:cc}%"
-    "CFLAGS=%{conf-clang-osx:pkg-config}% --cflags gmp"
-    "LDFLAGS=%{conf-clang-osx:pkg-config}% --libs gmp"
-    "INSTALL_DIR=%{ocaml-osx:sysroot}%/lib"
-    "OCAML_LIB_DIR=%{ocaml-osx:sysroot}%/lib/ocaml"
-    "sh" "-exc" "CFLAGS=`$CFLAGS` LDFLAGS=`$LDFLAGS` ./configure --installdir $INSTALL_DIR --ocamllibdir $OCAML_LIB_DIR" ]
-  [ "env" "OCAMLFIND_TOOLCHAIN=osx"
-    "sh" "-exc" "make" ]
+  ["env"
+   "CC=%{conf-clang-osx:cc}%"
+   "CFLAGS=%{conf-clang-osx:pkg-config}% --cflags gmp"
+   "LDFLAGS=%{conf-clang-osx:pkg-config}% --libs gmp"
+   "INSTALL_DIR=%{ocaml-osx:sysroot}%/lib"
+   "OCAML_LIB_DIR=%{ocaml-osx:sysroot}%/lib/ocaml"
+   "sh" "-exc" "CFLAGS=`$CFLAGS` LDFLAGS=`$LDFLAGS` ./configure --installdir $INSTALL_DIR --ocamllibdir $OCAML_LIB_DIR"]
+  ["sh" "-exc" "%{make}%"]
 ]
 install: [
   [make "install"]
@@ -31,7 +33,7 @@ depexts: [
   ["gmp"] {os-distribution = "omp"}
 ]
 extra-files: [
-  "patches/configure.patch" "md5=877c7c942f3711c2c1b5a3f3288a7073"
+  "patches/configure.patch" "md5=908a4b30b579f35e43cd9524182949d8"
 ]
 patches: [
   "patches/configure.patch"

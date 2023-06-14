@@ -2,7 +2,7 @@ diff --git a/configure b/configure
 index 585a002..cf2bc39 100755
 --- a/configure
 +++ b/configure
-@@ -22,12 +22,13 @@ host='auto'
+@@ -22,12 +22,12 @@ host='auto'
  gmp='auto'
  perf='no'
  
@@ -12,13 +12,12 @@ index 585a002..cf2bc39 100755
 -ocamlmklib='ocamlmklib'
 -ocamldep='ocamldep'
 -ocamldoc='ocamldoc'
-+OCAMLFIND='ocamlfind'
-+ocaml="$OCAMLFIND ocaml"
-+ocamlc="$OCAMLFIND ocamlc"
-+ocamlopt="$OCAMLFIND ocamlopt"
-+ocamlmklib="$OCAMLFIND ocamlmklib"
-+ocamldep="$OCAMLFIND ocamldep"
-+ocamldoc="$OCAMLFIND ocamldoc"
++ocaml='ocamlfind ocaml'
++ocamlc='ocamlfind ocamlc'
++ocamlopt='ocamlfind ocamlopt'
++ocamlmklib='ocamlfind ocamlmklib'
++ocamldep='ocamlfind ocamldep'
++ocamldoc='ocamlfind ocamldoc'
  ccinc="$CPPFLAGS"
  cclib="$LDFLAGS"
  ccdef=''
