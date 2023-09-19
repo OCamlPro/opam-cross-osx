@@ -1,5 +1,5 @@
 opam-version: "2.0"
-maintainer: "Daniil Baturin <daniil+opam@baturin.org>"
+maintainer: "thomas@gazagnaire.org"
 authors: "Thomas Gazagnaire"
 license: "ISC"
 tags: ["org:mirage" "org:ocamllabs"]
@@ -7,11 +7,11 @@ homepage: "https://github.com/mirage/ezjsonm"
 doc: "https://mirage.github.io/ezjsonm/"
 bug-reports: "https://github.com/mirage/ezjsonm/issues"
 depends: [
-  "ocaml-osx" {>="4.03.0"}
-  "dune" {>= "1.0"}
+  "ocaml-osx" {>="4.04.0"}
+  "dune" {>= "2.0"}
   "alcotest" {with-test & >= "0.4.0"}
   "jsonm-osx" {>= "1.0.0"}
-  "sexplib-osx"
+  "sexplib0-osx"
   "hex-osx"
 ]
 build: [
@@ -29,8 +29,12 @@ quick scripts that manipulate JSON.
 More advanced users should go straight to the Jsonm library and
 use it directly, rather than be saddled with the Ezjsonm interface.
 """
+x-commit-hash: "5986fd927c7a804b09867f43ca82a75407dcdadb"
 url {
   src:
-    "https://github.com/mirage/ezjsonm/releases/download/v1.1.0/ezjsonm-v1.1.0.tbz"
-  checksum: "md5=e8f207c6cd2226b2c4784b1e56556797"
+    "https://github.com/mirage/ezjsonm/releases/download/v1.2.0/ezjsonm-v1.2.0.tbz"
+  checksum: [
+    "sha256=870bbe1c24484bb7e1acce44859dd521c24cb8a8f0e74042a62418c68671cce0"
+    "sha512=f603642ecdd01696017d0a8fef0ae8867777fbced53ad670afa3da8f12e2c101a5c6cd201b7917685323bc9033793dd406c6d333ed4a24d2d4d4d6c88527693b"
+  ]
 }
