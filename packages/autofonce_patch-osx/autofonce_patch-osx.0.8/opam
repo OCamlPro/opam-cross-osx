@@ -27,7 +27,7 @@ build: [
     "@install"
     "@runtest" {with-test}
     "@doc" {with-doc}
-    "-x" "windows"
+    "-x" "osx"
   ]
   ["sh" "-c" "./scripts/after.sh build '%{name}%'"]
 ]
