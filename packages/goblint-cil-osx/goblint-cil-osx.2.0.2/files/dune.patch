@@ -1,0 +1,122 @@
+diff --git a/bin/dune b/bin/dune
+index 3504a5b9..f3c6be0c 100644
+--- a/bin/dune
++++ b/bin/dune
+@@ -13,10 +13,10 @@
+  (deps cilly))
+ 
+ 
+-(executable
+- (name realGccConfigure)
+- (libraries dune-configurator str))
++;(executable
++; (name realGccConfigure)
++; (libraries dune-configurator str))
+ 
+-(rule
+- (target real-gcc)
+- (action (run ./realGccConfigure.exe)))
++;(rule
++; (target real-gcc)
++; (action (run ./realGccConfigure.exe)))
+diff --git a/lib/perl5/App/Cilly/dune b/lib/perl5/App/Cilly/dune
+index 6427b009..d2e122ab 100644
+--- a/lib/perl5/App/Cilly/dune
++++ b/lib/perl5/App/Cilly/dune
+@@ -1,3 +1,3 @@
+ (rule
+  (target CilConfig.pm)
+- (action (write-file %{target} "package App::Cilly::CilConfig;\n\n$::cc        = \"%{read-lines:../../../../bin/real-gcc}\";\n$::default_mode = \"GNUCC\";\n")))
++ (action (write-file %{target} "package App::Cilly::CilConfig;\n\n$::cc        = \"%{cc}\";\n$::default_mode = \"GNUCC\";\n")))
+diff --git a/src/dune b/src/dune
+index 6b376601..9e5d4047 100644
+--- a/src/dune
++++ b/src/dune
+@@ -7,43 +7,65 @@
+   (modules (:standard \ main ciloptions machdepConfigure modelConfigure))
+ )
+ 
+-(executable
+- (name machdepConfigure)
+- (modules machdepConfigure)
+- (libraries dune-configurator))
++;(executable
++; (name machdepConfigure)
++; (modules machdepConfigure)
++; (libraries dune-configurator))
+ 
+-(rule
+- (target machdep-config.h)
+- (action (run ./machdepConfigure.exe)))
++;(rule
++; (target machdep-config.h)
++; (action (run ./machdepConfigure.exe)))
+ 
+-(rule
+- (deps machdep-config.h machdep-ml.c)
+- (target machdep-ml.exe)
+- (action (run %{read-lines:../bin/real-gcc} -D_GNUCC machdep-ml.c -o %{target})))
++;(rule
++; (deps machdep-config.h machdep-ml.c)
++; (target machdep-ml.exe)
++; (action (run %{read-lines:../bin/real-gcc} -D_GNUCC machdep-ml.c -o %{target})))
+ 
+ ; for Cilly.pm
+-(executable
+- (name modelConfigure)
+- (modules modelConfigure)
+- (libraries dune-configurator))
++;(executable
++; (name modelConfigure)
++; (modules modelConfigure)
++; (libraries dune-configurator))
+ 
+ ; for Cilly.pm
++;(rule
++; (deps machdep-config.h machdep-ml.c)
++; (target gcc32model)
++; (action (with-stdout-to %{target} (run ./modelConfigure.exe --real-gcc %{read-lines:../bin/real-gcc} -m 32))))
++
+ (rule
+- (deps machdep-config.h machdep-ml.c)
++ (deps clangosx32model)
+  (target gcc32model)
+- (action (with-stdout-to %{target} (run ./modelConfigure.exe --real-gcc %{read-lines:../bin/real-gcc} -m 32))))
++ (action (copy %{deps} %{target})))
+ 
+ ; for Cilly.pm
++;(rule
++; (deps machdep-config.h machdep-ml.c)
++; (target gcc64model)
++; (action (with-stdout-to %{target} (run ./modelConfigure.exe --real-gcc %{read-lines:../bin/real-gcc} -m 64))))
++
+ (rule
+- (deps machdep-config.h machdep-ml.c)
++ (deps clangosx64model)
+  (target gcc64model)
+- (action (with-stdout-to %{target} (run ./modelConfigure.exe --real-gcc %{read-lines:../bin/real-gcc} -m 64))))
++ (action (copy %{deps} %{target})))
++
++;(rule
++; (target machdep.ml)
++; (action (run %{bin:cppo} -V OCAML:%{ocaml_version}
++;              %{dep:machdep.cppo.ml} -x machdep:./%{dep:machdep-ml.exe}
++;              -o %{target})))
++
++(rule
++ (deps machdep.ml.clangosx32)
++ (target machdep.ml)
++ (enabled_if (= %{arch_sixtyfour} false))
++ (action (copy %{deps} %{target})))
+ 
+ (rule
++ (deps machdep.ml.clangosx64)
+  (target machdep.ml)
+- (action (run %{bin:cppo} -V OCAML:%{ocaml_version}
+-              %{dep:machdep.cppo.ml} -x machdep:./%{dep:machdep-ml.exe}
+-              -o %{target})))
++ (enabled_if (= %{arch_sixtyfour} true))
++ (action (copy %{deps} %{target})))
+ 
+ (ocamllex formatlex)
+ (ocamlyacc formatparse)

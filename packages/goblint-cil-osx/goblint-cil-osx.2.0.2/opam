@@ -1,0 +1,71 @@
+opam-version: "2.0"
+synopsis:
+  "A front-end for the C programming language that facilitates program analysis and transformation"
+description: """
+This is a fork of the 'cil' package used for 'goblint'. Major changes include:
+* Support for C99 and C11.
+* Compatibility with modern OCaml versions.
+* Use Zarith instead of Num and use that for integer constants.
+* Improved locations with columns and spans.
+* Removal of unmaintained extensions and MSVC support.
+* Use dune instead of make and ocamlbuild.
+* Many bug fixes."""
+maintainer: [
+  "Michael Schwarz <michael.schwarz93@gmail.com>"
+  "Simmo Saan <simmo.saan@gmail.com>"
+]
+authors: [
+  "George Necula"
+  "Scott McPeak"
+  "Westley Weimer"
+  "Gabriel Kerneis"
+  "Ralf Vogler"
+  "Michael Schwarz"
+  "Simmo Saan"
+]
+license: "BSD-3-Clause"
+homepage: "https://github.com/goblint/cil"
+bug-reports: "https://github.com/goblint/cil/issues"
+depends: [
+  "ocaml-osx" {>= "4.05.0"}
+  "zarith-osx"
+  "dune" {>= "2.7"}
+  "stdlib-shims-osx"
+  "ppx_deriving_yojson-osx" {>= "3.2"}
+  "yojson-osx"
+]
+conflicts: ["cil"]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    "goblint-cil"
+    "-j"
+    jobs
+    "-x"
+    "osx"
+    "@install"
+  ]
+]
+extra-files: [
+  ["dune.patch" "md5=be851f5e9705a3628a592db9022275fc"]
+  ["src/machdep.ml.clangosx32" "md5=54c5677087344a970d425bee3dfb9c52"]
+  ["src/machdep.ml.clangosx64" "md5=34ac66d5e254350b568685c63a73233b"]
+  ["src/clangosx32model" "md5=d7a2500936cc69b26032a47eaccbb107"]
+  ["src/clangosx64model" "md5=c5410423af00142425d055fb65eadf9f"]
+]
+patches: [
+  "dune.patch"
+]
+dev-repo: "git+https://github.com/goblint/cil.git"
+url {
+  src:
+    "https://github.com/goblint/cil/releases/download/2.0.2/goblint-cil-2.0.2.tbz"
+  checksum: [
+    "sha256=e6b654a67a46fb5a71a6c9d9ed24f46100d3f33537fef1edf5f57d3058d0dc58"
+    "sha512=fbf66413e777b887d11c40adaf3099e6be444a9609c41508d24fe1fdb20d720fad241d2b8cc80fd6dc8829ea02cfbd7b7fc239a94b807e3df29d3f72f9f20c80"
+  ]
+}
+x-commit-hash: "98598d94f796a63751e5a9d39c6b3a9fe1f32330"
