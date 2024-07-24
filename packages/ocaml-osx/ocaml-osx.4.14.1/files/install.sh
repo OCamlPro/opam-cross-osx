@@ -4,6 +4,7 @@ OPAM_PREFIX="$1"
 HOST="$2"
 
 cat > "ocaml-osx.config" <<EOF
+opam-version: "2.0"
 variables {
   sysroot: "${OPAM_PREFIX}/osx-sysroot"
 }
