@@ -13,6 +13,6 @@ depends: [
 ]
 synopsis: "A meta-package depending on any OCaml 64-bit OSX cross-compiler"
 extra-files: [
-  ["remove.sh" "md5=5bfce83b4866826b27d38aee7b7f34a5"]
-  ["install.sh" "md5=91af927717fe6b01b8877eab86da9340"]
+  ["remove.sh" "md5=871758a71eca37824ee76a6cba004ab1"]
+  ["install.sh" "md5=1a87bd99fc42fb08f4e5d90e8fb0d87c"]
 ]
