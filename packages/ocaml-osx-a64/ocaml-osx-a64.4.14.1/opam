@@ -26,7 +26,7 @@ conflicts: [
 ]
 synopsis: "OCaml cross-compiler for ARM 64-bit OSX targets"
 extra-files: [
-  ["osx.conf.in" "md5=35f05317e15cc87c9e76f25b0efa5c96"]
+  ["osx.conf.in" "md5=78bcfd75764edd01d83c1a1d08ded2fd"]
   ["build.sh" "md5=3026069500fab03a75373ac8100acf5e"]
   ["install.sh" "md5=c08afd8e166a799d25ed86a6a48a7df7"]
   ["patches/ostype-fix.patch" "md5=0da73e29a493025ed3cbbfb5226034e4"]
