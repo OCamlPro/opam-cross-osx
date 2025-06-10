@@ -17,7 +17,7 @@ build: [
   ["oasis" "setup"] {ocaml:version >= "4.00.0"}
   ["env" "OCAMLFIND_TOOLCHAIN=osx"
    "ocaml" "setup.ml" "-configure" "--prefix" "%{prefix}%/osx-sysroot"
-                                   "--override" "ext_dll" ".dll"]
+                                   "--override" "ext_dll" ".so"]
   ["env" "OCAMLFIND_TOOLCHAIN=osx" "ocaml" "setup.ml" "-build"]
 ]
 install:   ["env" "OCAMLFIND_TOOLCHAIN=osx" "ocaml" "setup.ml" "-install"]

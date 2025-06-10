@@ -8,7 +8,7 @@ dev-repo: "git+https://github.com/hcarty/lwt-zmq.git"
 build: [
   ["env" "OCAMLFIND_TOOLCHAIN=osx"
    "ocaml" "setup.ml" "-configure" "--prefix" "%{prefix}%/osx-sysroot"
-                                   "--override" "ext_dll" ".dll"]
+                                   "--override" "ext_dll" ".so"]
   ["ocamlbuild" "-use-ocamlfind" "-just-plugin"]
   ["env" "OCAMLFIND_TOOLCHAIN=osx"
    "ocaml" "setup.ml" "-build"]

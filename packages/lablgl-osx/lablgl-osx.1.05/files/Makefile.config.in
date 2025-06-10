@@ -2,7 +2,7 @@ CAMLC = ocamlfind ocamlc
 CAMLOPT = ocamlfind ocamlopt
 LIBRARIAN = ocamlfind ocamlmklib -verbose -ocamlc ocamlc -ocamlopt ocamlopt
 
-OCAMLDIR = %{prefix}%/windows-sysroot
+OCAMLDIR = %{prefix}%/osx-sysroot
 BINDIR = $(OCAMLDIR)/bin
 DLLDIR = $(OCAMLDIR)/lib/stublibs
 INSTALLDIR = $(OCAMLDIR)/lib/lablgl
@@ -15,8 +15,8 @@ GLUTLIBS0 = $(GLUTLIBS)
 
 RANLIB = :
 
-XE = .exe
-XS = .dll
+XE =
+XS =
 
 TOGL_WS = TOGL_WGL
 

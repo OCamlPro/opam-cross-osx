@@ -3,7 +3,7 @@ maintainer: "Hezekiah M. Carty <hcarty@endgame.com>"
 build: [
   ["env" "OCAMLFIND_TOOLCHAIN=osx"
    "ocaml" "setup.ml" "-configure" "--prefix" "%{prefix}%/osx-sysroot"
-                                   "--override" "ext_dll" ".dll"]
+                                   "--override" "ext_dll" ".so"]
   ["env" "OCAMLFIND_TOOLCHAIN=osx"
    "ocaml" "setup.ml" "-build"]
 ]

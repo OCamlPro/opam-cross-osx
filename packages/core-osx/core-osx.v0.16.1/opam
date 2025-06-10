@@ -1,0 +1,66 @@
+opam-version: "2.0"
+maintainer: "Jane Street developers"
+authors: ["Jane Street Group, LLC"]
+homepage: "https://github.com/janestreet/core"
+bug-reports: "https://github.com/janestreet/core/issues"
+dev-repo: "git+https://github.com/janestreet/core.git"
+doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/core/index.html"
+license: "MIT"
+patches: [
+  "patches/no-endian-header.patch"
+]
+build: [
+  ["dune" "build" "-p" "core" "-x" "osx" "-j" jobs]
+]
+depends: [
+  "ocaml-osx"               {>= "4.14.0"}
+  "base-osx"                {>= "v0.16" & < "v0.17"}
+  "base_bigstring-osx"      {>= "v0.16" & < "v0.17"}
+  "base_quickcheck-osx"     {>= "v0.16" & < "v0.17"}
+  "bin_prot-osx"            {>= "v0.16" & < "v0.17"}
+  "fieldslib-osx"           {>= "v0.16" & < "v0.17"}
+  "jane-street-headers-osx" {>= "v0.16" & < "v0.17"}
+  "jst-config-osx"          {>= "v0.16" & < "v0.17"}
+  "ppx_assert"          {>= "v0.16" & < "v0.17"}
+  "ppx_assert-osx"          {>= "v0.16" & < "v0.17"}
+  "ppx_base"            {>= "v0.16" & < "v0.17"}
+  "ppx_base-osx"            {>= "v0.16" & < "v0.17"}
+  "ppx_hash"            {>= "v0.16" & < "v0.17"}
+  "ppx_hash-osx"            {>= "v0.16" & < "v0.17"}
+  "ppx_inline_test"     {>= "v0.16" & < "v0.17"}
+  "ppx_inline_test-osx"     {>= "v0.16" & < "v0.17"}
+  "ppx_jane"            {>= "v0.16" & < "v0.17"}
+  "ppx_jane-osx"            {>= "v0.16" & < "v0.17"}
+  "ppx_optcomp"         {>= "v0.16" & < "v0.17"}
+  "ppx_optcomp-osx"         {>= "v0.16" & < "v0.17"}
+  "ppx_sexp_conv"       {>= "v0.16" & < "v0.17"}
+  "ppx_sexp_conv-osx"       {>= "v0.16" & < "v0.17"}
+  "ppx_sexp_message"    {>= "v0.16" & < "v0.17"}
+  "ppx_sexp_message-osx"    {>= "v0.16" & < "v0.17"}
+  "sexplib-osx"             {>= "v0.16" & < "v0.17"}
+  "splittable_random-osx"   {>= "v0.16" & < "v0.17"}
+  "stdio-osx"               {>= "v0.16" & < "v0.17"}
+  "time_now-osx"            {>= "v0.16" & < "v0.17"}
+  "typerep-osx"             {>= "v0.16" & < "v0.17"}
+  "variantslib-osx"         {>= "v0.16" & < "v0.17"}
+  "dune"                {>= "2.0.0"}
+]
+available: arch != "arm32" & arch != "x86_32"
+synopsis: "Industrial strength alternative to OCaml's standard library"
+description: "
+The Core suite of libraries is an industrial strength alternative to
+OCaml's standard library that was developed by Jane Street, the
+largest industrial user of OCaml.
+
+This is the system-independent part of Core. Unix-specific parts were moved to [core-unix].
+"
+url {
+  src: "https://github.com/janestreet/core/archive/refs/tags/v0.16.1.tar.gz"
+  checksum: [
+    "md5=98b40c39c9be584c22a48d40ed3ffe57"
+    "sha512=5f9f4400b6e42b74ffd57223cb67884368d324739565bbb20162547ede8bd6d0ece3cc265503b674829f9cf373784e8036d4c73e26e9196aa5446de69b63e181"
+  ]
+}
+extra-files: [
+  "patches/no-endian-header.patch" "md5=1398b42006ed9109a2b3c05b98739f65"
+]

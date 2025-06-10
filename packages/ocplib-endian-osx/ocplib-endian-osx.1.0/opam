@@ -5,7 +5,7 @@ homepage: "https://github.com/OCamlPro/ocplib-endian"
 build: [
   ["env" "OCAMLFIND_TOOLCHAIN=osx"
    "ocaml" "setup.ml" "-configure" "--prefix" "%{prefix}%/osx-sysroot"
-                                   "--override" "ext_dll" ".dll"]
+                                   "--override" "ext_dll" ".so"]
   ["env" "OCAMLFIND_TOOLCHAIN=osx"
    "ocaml" "setup.ml" "-build"]
 ]

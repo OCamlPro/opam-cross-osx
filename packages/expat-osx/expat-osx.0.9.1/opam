@@ -21,7 +21,7 @@ write XML-Parsers using the SAX method. An XML document is parsed on
 the fly without needing to load the entire XML-Tree into memory."""
 flags: light-uninstall
 extra-files: [
-  "patches/Makefile.patch" "md5=4a5a42fb2d6f5bc5ee5b3eb3db4dfb25"
+  "patches/Makefile.patch" "md5=430cee7ecf86c77c39985235e042e054"
 ]
 url {
   src: "http://mmzeeman.home.xs4all.nl/ocaml/ocaml-expat-0.9.1.tar.gz"

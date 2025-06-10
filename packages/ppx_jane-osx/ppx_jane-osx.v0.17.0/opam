@@ -1,0 +1,81 @@
+opam-version: "2.0"
+maintainer: "Jane Street developers"
+authors: ["Jane Street Group, LLC"]
+homepage: "https://github.com/janestreet/ppx_jane"
+bug-reports: "https://github.com/janestreet/ppx_jane/issues"
+dev-repo: "git+https://github.com/janestreet/ppx_jane.git"
+doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/ppx_jane/index.html"
+license: "MIT"
+build: [
+  ["dune" "build" "-p" "ppx_jane" "-x" "osx" "-j" jobs]
+]
+depends: [
+  "ocaml-osx"                       {>= "5.1.0"}
+  "base_quickcheck"             {>= "v0.17" & < "v0.18"}
+  "base_quickcheck-osx"             {>= "v0.17" & < "v0.18"}
+  "ppx_assert"                  {>= "v0.17" & < "v0.18"}
+  "ppx_assert-osx"                  {>= "v0.17" & < "v0.18"}
+  "ppx_base"                    {>= "v0.17" & < "v0.18"}
+  "ppx_base-osx"                    {>= "v0.17" & < "v0.18"}
+  "ppx_bench"                   {>= "v0.17" & < "v0.18"}
+  "ppx_bench-osx"                   {>= "v0.17" & < "v0.18"}
+  "ppx_bin_prot"                {>= "v0.17" & < "v0.18"}
+  "ppx_bin_prot-osx"                {>= "v0.17" & < "v0.18"}
+  "ppx_custom_printf"           {>= "v0.17" & < "v0.18"}
+  "ppx_custom_printf-osx"           {>= "v0.17" & < "v0.18"}
+  "ppx_disable_unused_warnings" {>= "v0.17" & < "v0.18"}
+  "ppx_disable_unused_warnings-osx" {>= "v0.17" & < "v0.18"}
+  "ppx_expect"                  {>= "v0.17" & < "v0.18"}
+  "ppx_expect-osx"                  {>= "v0.17" & < "v0.18"}
+  "ppx_fields_conv"             {>= "v0.17" & < "v0.18"}
+  "ppx_fields_conv-osx"             {>= "v0.17" & < "v0.18"}
+  "ppx_fixed_literal"           {>= "v0.17" & < "v0.18"}
+  "ppx_fixed_literal-osx"           {>= "v0.17" & < "v0.18"}
+  "ppx_here"                    {>= "v0.17" & < "v0.18"}
+  "ppx_here-osx"                    {>= "v0.17" & < "v0.18"}
+  "ppx_ignore_instrumentation"  {>= "v0.17" & < "v0.18"}
+  "ppx_ignore_instrumentation-osx"  {>= "v0.17" & < "v0.18"}
+  "ppx_inline_test"             {>= "v0.17" & < "v0.18"}
+  "ppx_inline_test-osx"             {>= "v0.17" & < "v0.18"}
+  "ppx_let"                     {>= "v0.17" & < "v0.18"}
+  "ppx_let-osx"                     {>= "v0.17" & < "v0.18"}
+  "ppx_log"                     {>= "v0.17" & < "v0.18"}
+  "ppx_log-osx"                     {>= "v0.17" & < "v0.18"}
+  "ppx_module_timer"            {>= "v0.17" & < "v0.18"}
+  "ppx_module_timer-osx"            {>= "v0.17" & < "v0.18"}
+  "ppx_optional"                {>= "v0.17" & < "v0.18"}
+  "ppx_optional-osx"                {>= "v0.17" & < "v0.18"}
+  "ppx_pipebang"                {>= "v0.17" & < "v0.18"}
+  "ppx_pipebang-osx"                {>= "v0.17" & < "v0.18"}
+  "ppx_sexp_message"            {>= "v0.17" & < "v0.18"}
+  "ppx_sexp_message-osx"            {>= "v0.17" & < "v0.18"}
+  "ppx_sexp_value"              {>= "v0.17" & < "v0.18"}
+  "ppx_sexp_value-osx"              {>= "v0.17" & < "v0.18"}
+  "ppx_stable"                  {>= "v0.17" & < "v0.18"}
+  "ppx_stable-osx"                  {>= "v0.17" & < "v0.18"}
+  "ppx_stable_witness"          {>= "v0.17" & < "v0.18"}
+  "ppx_stable_witness-osx"          {>= "v0.17" & < "v0.18"}
+  "ppx_string"                  {>= "v0.17" & < "v0.18"}
+  "ppx_string-osx"                  {>= "v0.17" & < "v0.18"}
+  "ppx_string_conv"             {>= "v0.17" & < "v0.18"}
+  "ppx_string_conv-osx"             {>= "v0.17" & < "v0.18"}
+  "ppx_tydi"                    {>= "v0.17" & < "v0.18"}
+  "ppx_tydi-osx"                    {>= "v0.17" & < "v0.18"}
+  "ppx_typerep_conv"            {>= "v0.17" & < "v0.18"}
+  "ppx_typerep_conv-osx"            {>= "v0.17" & < "v0.18"}
+  "ppx_variants_conv"           {>= "v0.17" & < "v0.18"}
+  "ppx_variants_conv-osx"           {>= "v0.17" & < "v0.18"}
+  "dune"                        {>= "3.11.0"}
+  "ppxlib"                      {>= "0.28.0"}
+  "ppxlib-osx"                      {>= "0.28.0"}
+]
+available: arch != "arm32" & arch != "x86_32"
+synopsis: "Standard Jane Street ppx rewriters"
+description: "
+This package installs a ppx-jane executable, which is a ppx driver
+including all standard Jane Street ppx rewriters.
+"
+url {
+src: "https://github.com/janestreet/ppx_jane/archive/refs/tags/v0.17.0.tar.gz"
+checksum: "sha256=4dcf29dbb093f57fdda18b659739b255b66dc5566b6c4c8a35caa3ce8666fa65"
+}
