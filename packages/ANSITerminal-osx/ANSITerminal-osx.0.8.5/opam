@@ -15,13 +15,11 @@ build: [
 depends: [
   "ocaml" {os != "win32" | >= "4.04"}
   "dune" {>= "2.0"}
-  "base-bytes"
-  "base-unix"
 ]
-synopsis: "Basic control of ANSI compliant terminals and the windows shell"
+synopsis: "Basic control of ANSI compliant terminals and the osx shell"
 description: """
 ANSITerminal is a module allowing to use the colors and cursor
-movements on ANSI terminals. It also works on the windows shell (but
+movements on ANSI terminals. It also works on the osx shell (but
 this part is currently work in progress)."""
 url {
   src:

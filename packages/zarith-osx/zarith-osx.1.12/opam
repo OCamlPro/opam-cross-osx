@@ -16,8 +16,8 @@ build: [
    "CC=%{conf-clang-osx:cc}%"
    "CFLAGS=%{conf-clang-osx:pkg-config}% --cflags gmp"
    "LDFLAGS=%{conf-clang-osx:pkg-config}% --libs gmp"
-   "INSTALL_DIR=%{ocaml-osx:sysroot}%/lib"
-   "OCAML_LIB_DIR=%{ocaml-osx:sysroot}%/lib/ocaml"
+   "INSTALL_DIR=%{prefix}%/osx-sysroot/lib"
+   "OCAML_LIB_DIR=%{prefix}%/osx-sysroot/lib/ocaml"
    "sh" "-exc" "CFLAGS=`$CFLAGS` LDFLAGS=`$LDFLAGS` ./configure --installdir $INSTALL_DIR --ocamllibdir $OCAML_LIB_DIR"]
   ["sh" "-exc" "%{make}%"]
 ]
