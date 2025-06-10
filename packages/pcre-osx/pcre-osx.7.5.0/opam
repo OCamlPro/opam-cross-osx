@@ -15,6 +15,9 @@ depends: [
   "ocaml-osx" {>= "4.12"}
   "dune-configurator"
 ]
+build-env: [
+  [PKG_CONFIG = "%{conf-clang-osx64:prefix}%pkg-config"]
+]
 build: [
   [
     "dune"

@@ -8,7 +8,11 @@ dev-repo: "git+https://github.com/ygrek/ocurl.git"
 bug-reports: "https://github.com/ygrek/ocurl/issues"
 tags: ["org:ygrek" "clib:curl"]
 build: [
-  ["./configure" "--host=%{conf-clang-osx:host}%" "--prefix=%{prefix}%" "OCAMLFIND_TOOLCHAIN=osx"]
+  [ "./configure"
+    "--host=%{conf-clang-osx:host}%"
+    "--prefix=%{prefix}%"
+    "OCAMLFIND_TOOLCHAIN=osx"
+  ]
   [
     "dune"
     "build"
@@ -21,17 +25,25 @@ build: [
     "@install"
   ]
 ]
+patches: [
+  "patches/undef.patch"
+  "patches/link.patch"
+]
+extra-files: [
+  ["patches/undef.patch" "md5=6a9b6d85af9f73c6c22ae918baa36ed9"]
+  ["patches/link.patch" "md5=08ab5ee99d00ac5c7986f60037448cb4"]
+]
 depends: [
   "ocaml-osx" {>= "4.02.0"}
+  "dune"
   "ocamlfind" {build}
 ]
 depopts: ["lwt" "lwt_ppx"]
-conflicts: ["ocurl-osx"]
 depexts: [
   ["curl"] {os-distribution = "omp"}
 ]
 synopsis: "Bindings to libcurl"
 description: "libcurl is a client-side URL transfer library, supporting HTTP and a multitude of other network protocols (FTP/SMTP/RTSP/etc). This library wrap easy synchronous API (Curl), synchronous parallel and generic asynchronous API (Curl.Multi), and provides an Lwt-enabled asynchronous interface (Curl_lwt)."
 url {
-  src: "git+https://github.com/ygrek/ocurl.git#f0c6f47"
+  src: "git+https://github.com/ygrek/ocurl.git#1bc75b8"
 }

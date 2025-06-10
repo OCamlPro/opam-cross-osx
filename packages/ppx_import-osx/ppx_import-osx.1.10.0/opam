@@ -10,9 +10,9 @@ dev-repo: "git+https://github.com/ocaml-ppx/ppx_import.git"
 tags: [ "syntax" ]
 
 depends: [
-  "ocaml-osx"               {>= "4.05.0"}
+  "ocaml-osx"           {>= "4.05.0"}
   "dune"                    {>= "1.11.0"}
-  "ppxlib-osx"              {>= "0.26.0"}
+  "ppxlib-osx"          {>= "0.26.0"}
 ]
 
 build: [["dune" "build" "-p" "ppx_import" "-x" "osx" "-j" jobs]]

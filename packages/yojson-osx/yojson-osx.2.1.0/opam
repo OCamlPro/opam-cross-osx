@@ -16,6 +16,7 @@ doc: "https://ocaml-community.github.io/yojson"
 bug-reports: "https://github.com/ocaml-community/yojson/issues"
 depends: [
   "dune" {>= "2.7"}
+  "ocaml" {>= "4.02.3"}
   "ocaml-osx" {>= "4.02.3"}
   "cppo" {build}
   "alcotest" {with-test & >= "0.8.5"}
@@ -29,10 +30,10 @@ build: [
     "build"
     "-p"
     "yojson"
-    "-x"
-    "osx"
     "-j"
     jobs
+    "-x"
+    "osx"
     "@install"
     "@runtest" {with-test}
     "@doc" {with-doc}

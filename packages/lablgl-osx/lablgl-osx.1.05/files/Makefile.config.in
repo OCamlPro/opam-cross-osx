@@ -2,7 +2,7 @@ CAMLC = ocamlfind ocamlc
 CAMLOPT = ocamlfind ocamlopt
 LIBRARIAN = ocamlfind ocamlmklib -verbose -ocamlc ocamlc -ocamlopt ocamlopt
 
-OCAMLDIR = %{prefix}%/windows-sysroot
+OCAMLDIR = %{prefix}%/osx-sysroot
 BINDIR = $(OCAMLDIR)/bin
 DLLDIR = $(OCAMLDIR)/lib/stublibs
 INSTALLDIR = $(OCAMLDIR)/lib/lablgl

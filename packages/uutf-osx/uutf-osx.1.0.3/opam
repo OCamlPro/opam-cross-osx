@@ -8,19 +8,19 @@ dev-repo: "git+https://erratique.ch/repos/uutf.git"
 bug-reports: "https://github.com/dbuenzli/uutf/issues"
 license: ["ISC"]
 tags: ["unicode" "text" "utf-8" "utf-16" "codec" "org:erratique"]
-depends: [
-  "ocaml" {>= "4.03.0"}
-  "ocaml-osx" {>= "4.03.0"}
-  "ocamlfind" {build}
-  "ocamlbuild" {build}
-  "topkg" {build & >= "1.0.3"}
-  "opam-installer" {build}]
-depopts: ["cmdliner"]
-conflicts: ["cmdliner" {< "0.9.8"}]
-build: [["ocaml" "pkg/pkg.ml" "build" "--toolchain" "osx" "--dev-pkg" "%{dev}%"
+depends: ["ocaml" {>= "4.03.0"}
+          "ocaml-osx" {>= "4.03.0"}
+          "ocamlfind" {build}
+          "ocamlbuild" {build}
+          "opam-installer" {build}
+          "topkg-osx" {build & >= "1.0.3"}
+          "topkg" {build & >= "1.0.3"}]
+depopts: ["cmdliner-osx"]
+conflicts: ["cmdliner-osx" {< "0.9.8"}]
+build: [["ocaml" "pkg/pkg.ml" "build" "--toolchain" "osx" "--pkg-name" "uutf" "--dev-pkg" "%{dev}%"
           "--with-cmdliner" "%{cmdliner-osx:installed}%"]]
-install: [["opam-installer" "--prefix=%{prefix}%/osx-sysroot" "uutf.install"]]
-remove: [["ocamlfind" "-toolchain" "osx" "remove" "uutf"]]
+install: ["opam-installer" "--prefix=%{prefix}%/osx-sysroot" "uutf.install"]
+remove: ["ocamlfind" "-toolchain" "osx" "remove" "uutf"]
 url {
   src: "https://erratique.ch/software/uutf/releases/uutf-1.0.3.tbz"
   checksum: "sha512=50cc4486021da46fb08156e9daec0d57b4ca469b07309c508d5a9a41e9dbcf1f32dec2ed7be027326544453dcaf9c2534919395fd826dc7768efc6cc4bfcc9f8"}
@@ -37,5 +37,5 @@ can be found in the Stdlib and you are encouraged to migrate to it.
 
 Uutf has no dependency and is distributed under the ISC license.
 
-Home page: http://erratique.ch/software/uutf  
+Home page: http://erratique.ch/software/uutf
 Contact: Daniel Bünzli `<daniel.buenzl i@erratique.ch>`"""

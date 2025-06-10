@@ -11,20 +11,14 @@ tags: ["string" "format" "pretty-print" "org:erratique"]
 depends: ["ocaml" {>= "4.08.0"}
           "ocamlfind" {build}
           "ocamlbuild" {build}
-  "topkg" {build & >= "1.0.3"}
- "stdlib-shims-osx"
-  "opam-installer" {build}
-  "seq-osx"
-  "ocaml-osx"
-  ]
-depopts: ["base-unix"
-          "cmdliner-osx"]
-conflicts: ["cmdliner" {< "0.9.8"}]
+          "topkg" {build & >= "1.0.3"}
+          "opam-installer" {build}
+          "ocaml-osx"]
+depopts: ["cmdliner-osx"]
 build: [["ocaml" "pkg/pkg.ml" "build" "--dev-pkg" "%{dev}%"
           "--with-base-unix" "true"
           "--with-cmdliner" "%{cmdliner-osx:installed}%"
-          "--toolchain" "osx"
-  ]]
+          "--toolchain" "osx"]]
 install: [["opam-installer" "--prefix=%{prefix}%/osx-sysroot" "fmt.install"]]
 remove: [["ocamlfind" "-toolchain" "osx" "remove" "fmt"]]
 url {
