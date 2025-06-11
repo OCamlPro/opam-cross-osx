@@ -15,8 +15,8 @@ GLUTLIBS0 = $(GLUTLIBS)
 
 RANLIB = :
 
-XE = .exe
-XS = .dll
+XE =
+XS =
 
 TOGL_WS = TOGL_WGL
 

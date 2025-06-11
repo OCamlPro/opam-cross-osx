@@ -14,7 +14,7 @@ install: [
                "bz2.mli" "bz2.cmi" "bz2.cmti"
                "bz2.cmt" "bz2.cmx"
                "bz2.cma" "bz2.cmxa" "bz2.a"
-               "dllcamlbz2.dll" "libcamlbz2.a"]
+               "dllcamlbz2.so" "libcamlbz2.a"]
 ]
 remove: [["ocamlfind" "-toolchain" "osx" "remove" "bz2"]]
 depends: [

@@ -20,7 +20,7 @@ depends: [
   "opam-installer" {build}
 ]
 build: [[
-  "env" "MTIME_OS=Win32"
+  "env" "MTIME_OS=Darwin"
   "ocaml" "pkg/pkg.ml" "build"
                        "--toolchain" "osx"
                        "--pinned" "%{pinned}%"

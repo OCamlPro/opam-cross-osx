@@ -8,7 +8,7 @@ build: [
 ]
 install: [
   ["sh" "-c" 
-   "ocamlfind -toolchain osx install mm src/META src/*.cm* src/*.mli src/*.dll src/*.a"]
+   "ocamlfind -toolchain osx install mm src/META src/*.cm* src/*.mli src/*.so src/*.a"]
 ]
 remove: ["ocamlfind" "-toolchain" "osx" "remove" "mm"]
 depends: [

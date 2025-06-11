@@ -7,7 +7,7 @@ index 7bc6d23..3362f0d 100644
  let use_pthread = ref true
  let use_unix = ref true
 -let os_type = ref "Unix"
-+let os_type = ref "Win32"
++let os_type = ref "Unix"
  let android_target = ref false
  let ccomp_type = ref "cc"
  let libev_default = ref true

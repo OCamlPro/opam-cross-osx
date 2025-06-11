@@ -2,7 +2,7 @@ opam-version: "2.0"
 maintainer: "andre@digirati.com.br"
 build: [
   ["ocaml" "setup.ml" "-configure" "--prefix" "%{prefix}%/osx-sysroot"
-                                   "--override" "ext_dll" ".dll"]
+                                   "--override" "ext_dll" ".so"]
   ["env" "OCAMLFIND_TOOLCHAIN=osx"
    "ocaml" "setup.ml" "-build"]
   ["env" "OCAMLFIND_TOOLCHAIN=osx"

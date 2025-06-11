@@ -33,7 +33,7 @@
  	{ test ! -f $(XARCHIVE) || extra="$(XARCHIVE) $(NAME).a"; }; \
  	$(OCAMLFIND) install $(NAME) META $(NAME).cmi $(NAME).mli $(ARCHIVE) \
 -	dll$(CARCHIVE_NAME).so lib$(CARCHIVE_NAME).a $$extra
-+	dll$(CARCHIVE_NAME).dll lib$(CARCHIVE_NAME).a $$extra
++	dll$(CARCHIVE_NAME).so lib$(CARCHIVE_NAME).a $$extra
  
  .PHONY: uninstall
  uninstall:

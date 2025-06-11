@@ -34,7 +34,7 @@ depends: [
   "topkg" {build & >= "1.0.3"}
   "opam-installer" {build}
 ]
-build: ["env" "PTIME_OS=Win32" "ocaml" "pkg/pkg.ml" "build" "--toolchain" "osx"]
+build: ["env" "PTIME_OS=Darwin" "ocaml" "pkg/pkg.ml" "build" "--toolchain" "osx"]
 install: [["opam-installer" "--prefix=%{prefix}%/osx-sysroot" "ptime.install"]]
 remove: [["ocamlfind" "-toolchain" "osx" "remove" "ptime"]]
 flags: light-uninstall

@@ -10,7 +10,7 @@ index 7be7ae3..85de869 100644
 -        match Sys.os_type with
 -        | "Win32" | "Cygwin" -> "win"
 -        | _ -> "unix" in
-+      let backend = "win" in
++      let backend = "unix" in
 
        let f = "as_needed_test" in
        let ml = f ^ ".ml" in

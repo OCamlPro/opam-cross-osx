@@ -29,7 +29,7 @@ depends: [
   "topkg" {build & >= "1.0.3"}
   "opam-installer" {build}
 ]
-build: ["env" "MTIME_OS=Win32" "ocaml" "pkg/pkg.ml" "build" "--toolchain" "osx"]
+build: ["env" "MTIME_OS=Darwin" "ocaml" "pkg/pkg.ml" "build" "--toolchain" "osx"]
 install: [["opam-installer" "--prefix=%{prefix}%/osx-sysroot" "mtime.install"]]
 flags: light-uninstall
 dev-repo: "git+https://erratique.ch/repos/mtime.git"

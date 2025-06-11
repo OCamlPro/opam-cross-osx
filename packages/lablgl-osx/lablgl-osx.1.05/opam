@@ -27,7 +27,7 @@ library."""
 flags: light-uninstall
 extra-files: [
   ["lablgl.install" "md5=a03d20fcd54d7277982caf03b05354fa"]
-  ["Makefile.config.in" "md5=6ead7c3c52cc5769d13173649d9e0d37"]
+  ["Makefile.config.in" "md5=cf4b9ca70eb147d53004ee3f448d43ba"]
   ["META" "md5=4f941d4011a1856933610d0cb89a1de8"]
   ["patches/ocamlmktop.patch" "md5=e39b9ec140321df79061f23769fc59e2"]
 ]

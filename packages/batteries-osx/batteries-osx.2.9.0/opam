@@ -30,7 +30,7 @@ build: [
     "%{prefix}%/osx-sysroot"
     "--override"
     "ext_dll"
-    ".dll"
+    ".so"
   ]
   ["ocamlbuild" "-use-ocamlfind" "-just-plugin"]
   [

@@ -24,9 +24,6 @@ build: [
     "@install"
   ]
 ]
-depexts: [
-  ["dlfcn-win32" "libao"] {os-distribution = "omp"}
-]
 dev-repo: "git+https://github.com/savonet/ocaml-ao.git"
 url {
   src: "https://github.com/savonet/ocaml-ao/archive/v0.2.4.tar.gz"
