@@ -18,10 +18,10 @@ RANLIB=${OSXCROSS_ROOT}/bin/${PREFIX}ranlib
 PKG_CONFIG=${OSXCROSS_ROOT}/bin/${PREFIX}pkg-config
 
 MACPORTS_ROOT=${OSXCROSS_ROOT}/macports/pkgs/opt/local
-BIN=${MACPORTS_ROOT}/usr/bin
-INCLUDE=${MACPORTS_ROOT}/usr/include
-LIB=${MACPORTS_ROOT}/usr/lib
-SHARE=${MACPORTS_ROOT}/usr/share
+BIN=${MACPORTS_ROOT}/bin
+INCLUDE=${MACPORTS_ROOT}/include
+LIB=${MACPORTS_ROOT}/lib
+SHARE=${MACPORTS_ROOT}/share
 
 echo "root: \"${OSXCROSS_ROOT}\"" > conf-clang-osx.config
 echo "host: \"${HOST}\"" >> conf-clang-osx.config

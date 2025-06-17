@@ -9,5 +9,5 @@ depends: [
   ("conf-clang-osx-i64" {= version} | "conf-clang-osx-a64" {= version})
 ]
 extra-files: [
-  "generate-config.sh" "md5=5f3f43effc162f2c571a6966986adcc0"
+  "generate-config.sh" "md5=82066b3ea6f57ec83a0a16c884352071"
 ]
