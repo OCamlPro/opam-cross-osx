@@ -36,7 +36,7 @@ depopts: [
 
 build: [
   ["dune" "exec" "-p" "lwt" "-x" "osx" "src/unix/config/discover.exe" "--" "--save"
-    "--use-libev" "%{conf-libev:installed}%"]
+    "--use-libev" "%{conf-libev-osx:installed}%"]
   ["dune" "build" "-p" "lwt" "-x" "osx" "-j" jobs]
 ]
 
