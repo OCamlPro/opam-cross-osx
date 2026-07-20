@@ -1,10 +1,10 @@
 opam-version: "2.0"
 maintainer: "david.declerck@ocamlpro.com"
 install: [
-  ["./install.sh" "%{prefix}%" "%{conf-clang-osx:host}%"]
+  ["sh" "./install.sh" "%{prefix}%" "%{conf-clang-osx:host}%"]
 ]
 remove: [
-  ["./remove.sh" "%{prefix}%" "%{conf-clang-osx:host}%"]
+  ["sh" "./remove.sh" "%{prefix}%" "%{conf-clang-osx:host}%"]
 ]
 depends: [
   "ocaml"
