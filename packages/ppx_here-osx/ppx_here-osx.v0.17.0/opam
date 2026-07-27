@@ -8,6 +8,7 @@ doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/ppx_here/index.html"
 license: "MIT"
 build: [
   ["dune" "build" "-p" "ppx_here" "-x" "osx" "-j" jobs]
+  ["rm" "%{name}%.install"]
 ]
 depends: [
   "ocaml-osx"  {>= "5.1.0"}
@@ -26,3 +27,4 @@ url {
 src: "https://github.com/janestreet/ppx_here/archive/refs/tags/v0.17.0.tar.gz"
 checksum: "sha256=27ac69db34a5ff0efbf6e3c52d52dda46d1e5d5db4d14fb4d8c20370b932a913"
 }
+install: ["dune" "install" "-x" "osx" "-p" "ppx_here"]

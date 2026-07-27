@@ -11,12 +11,13 @@ depends: [
   "dune" {>= "1.0"}
   "alcotest" {with-test & >= "0.4.0"}
   "jsonm-osx" {>= "1.0.0"}
-  "sexplib-osx" {< "v0.14"}
+  "sexplib-osx"
   "hex-osx"
 ]
 build: [
-  ["dune" "subst"] {pinned}
+  ["dune" "subst"] {dev}
   ["dune" "build" "-p" "ezjsonm" "-x" "osx" "-j" jobs]
+  ["rm" "%{name}%.install"]
 ]
 dev-repo: "git+https://github.com/mirage/ezjsonm.git"
 synopsis: "Simple interface on top of the Jsonm JSON library"
@@ -34,3 +35,4 @@ url {
     "https://github.com/mirage/ezjsonm/releases/download/v1.1.0/ezjsonm-v1.1.0.tbz"
   checksum: "md5=e8f207c6cd2226b2c4784b1e56556797"
 }
+install: ["dune" "install" "-x" "osx" "-p" "ezjsonm"]

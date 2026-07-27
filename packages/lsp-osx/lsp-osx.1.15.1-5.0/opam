@@ -24,7 +24,7 @@ bug-reports: "https://github.com/ocaml/ocaml-lsp/issues"
 depends: [
   "dune" {>= "3.0"}
   "jsonrpc-osx" {= version}
-  "yojson-osx"
+  "yojson-osx" {< "3"}
   "ppx_yojson_conv_lib-osx" {>= "v0.14"}
   "uutf-osx" {>= "1.0.2"}
   "ocaml-osx" {>= "4.12"}

@@ -19,17 +19,8 @@ depends: [
 ]
 build: [
   ["dune" "subst"] {dev}
-  [
-    "dune"
-    "build"
-    "-p"
-    "ctypes-foreign"
-    "-x"
-    "osx"
-    "-j"
-    jobs
-    "@install"
-  ]
+  ["dune" "build" "-p" "ctypes-foreign" "-x" "osx" "-j" jobs "@install"]
+  ["rm" "%{name}%.install"]
 ]
 extra-files: [
   ["patches/fix-config.patch" "md5=55560668d03e546e9c02e0e8b8ad5ddb"]
@@ -45,3 +36,4 @@ url {
   src: "https://github.com/yallop/ocaml-ctypes/archive/refs/tags/0.22.0.tar.gz"
   checksum: "md5=8a301a3e3b79156448a6659859ad506c"
 }
+install: ["dune" "install" "-x" "osx" "-p" "ctypes-foreign"]

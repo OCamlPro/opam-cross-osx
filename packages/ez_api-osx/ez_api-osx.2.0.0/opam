@@ -1,0 +1,76 @@
+opam-version: "2.0"
+synopsis: "Easy API library and tools"
+maintainer: "Fabrice Le Fessant <fabrice.le_fessant@ocamlpro.com>"
+authors: [
+  "Cagdas Bozman <cagdas.bozman@ocamlpro.com>"
+  "Michael Laporte <michael.laporte@ocamlpro.com>"
+  "Fabrice Le Fessant <fabrice.le_fessant@ocamlpro.com>"
+  "Maxime Levillain <maxime.levillain@ocamlpro.com>"
+  "Alain Mebsout <alain.mebsout@ocamlpro.com>"
+]
+license: "LGPL-2.1-only WITH OCaml-LGPL-linking-exception"
+homepage: "https://github.com/ocamlpro/ez_api"
+doc: "https://ocpmax.github.io/ez_api/ez_api/index.html"
+bug-reports: "https://github.com/ocamlpro/ez_api/issues"
+depends: [
+  "dune" {>= "2.8"}
+  "ocaml-osx" {>= "4.08"}
+  "json-data-encoding-osx" {>= "0.9"}
+  "lwt-osx" {>= "4.0.0"}
+  "ezjsonm-osx" {>= "1.1.0"}
+  "uuidm-osx"
+]
+depopts: [
+  "geoip-osx"
+  "js_of_ocaml-lwt-osx"
+  "calendar-osx"
+  "cohttp-lwt-unix-osx"
+  "cohttp-lwt-jsoo-osx"
+  "lwt_log-osx"
+  "tls-osx"
+  "httpaf-lwt-unix-osx"
+  "ocurl-osx"
+  "ezjs_fetch-osx"
+  "websocket-lwt-unix-osx"
+  "websocket-httpaf-lwt-osx"
+  "ppxlib-osx"
+  "ppx_deriving_encoding-osx"
+  "digestif-osx"
+  "yaml-osx"
+]
+conflicts: [
+  "calendar-osx" {< "2.03"}
+  "js_of_ocaml-lwt-osx" {< "4.0.0"}
+  "cohttp-lwt-unix-osx" {< "5.0.0"}
+  "cohttp-lwt-jsoo-osx" {< "5.0.0"}
+  "httpaf-lwt-unix-osx" {< "0.6.0"}
+  "ezjs_fetch-osx" {< "0.2"}
+  "ocurl-osx-osx" {< "0.8.0"}
+  "digestif-osx" {< "1.0.0"}
+  "ppxlib-osx-osx" {< "0.18.0"}
+  "ppx_deriving_encoding-osx" {< "0.3.0"}
+  "result-osx" {< "1.5"}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    "ez_api"
+    "-j"
+    jobs
+    "-x" "osx"
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/ocamlpro/ez_api.git"
+url {
+  src: "https://github.com/OCamlPro/ez_api/archive/refs/tags/v2.0.0.tar.gz"
+  checksum: [
+    "md5=ed68e0a33325ecf6a3319cafa636d62e"
+    "sha512=425c6289d568cf697e8d9977ac43e2ebcdeec8f04f5a17225824d5a37ac700961e5d1283b92aeaebaf58ccfb5b4261bcba1180ab11c267ade0de86b68fd6ca2d"
+  ]
+}

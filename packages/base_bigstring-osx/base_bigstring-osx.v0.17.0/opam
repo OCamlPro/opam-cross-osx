@@ -8,6 +8,7 @@ doc: "https://ocaml.janestreet.com/ocaml-core/latest/doc/base_bigstring/index.ht
 license: "MIT"
 build: [
   ["dune" "build" "-p" "base_bigstring" "-x" "osx" "-j" jobs]
+  ["rm" "%{name}%.install"]
 ]
 depends: [
   "ocaml-osx"    {>= "5.1.0"}
@@ -26,3 +27,4 @@ url {
 src: "https://github.com/janestreet/base_bigstring/archive/refs/tags/v0.17.0.tar.gz"
 checksum: "sha256=0c77edb9db4f29797cd5c22dd07fdbe4ff668715be870b86dcc1d849730b8562"
 }
+install: ["dune" "install" "-x" "osx" "-p" "base_bigstring"]

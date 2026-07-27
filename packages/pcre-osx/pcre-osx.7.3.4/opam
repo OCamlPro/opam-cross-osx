@@ -8,11 +8,21 @@ dev-repo: "git+https://github.com/mmottl/pcre-ocaml.git"
 bug-reports: "https://github.com/mmottl/pcre-ocaml/issues"
 
 build: [
-  ["dune" "subst"]{pinned}
-  ["env" "PKG_CONFIG_PATH=%{conf-clang-osx:c-lib}%/pkgconfig" 
-   "dune" "build"  "-p" "pcre" "-j" jobs "-x" "osx"]
+  ["dune" "subst"] {pinned}
+  [
+    "env"
+    "PKG_CONFIG_PATH=%{conf-clang-osx:c-lib}%/pkgconfig"
+    "dune"
+    "build"
+    "-p"
+    "pcre"
+    "-j"
+    jobs
+    "-x"
+    "osx"
+  ]
+  ["rm" "%{name}%.install"]
 ]
-
 depends: [
   "ocaml" {>= "4.04"}
   "base-osx" {build}
@@ -34,3 +44,4 @@ url {
 depexts: [
   ["pcre"] {os-distribution = "omp"}
 ]
+install: ["dune" "install" "-x" "osx" "-p" "pcre"]

@@ -15,17 +15,8 @@ depends: [
   "multicore-magic-osx" {>= "2.3.0"}
 ]
 build: [
-  [
-    "dune"
-    "build"
-    "-p"
-    "saturn_lockfree"
-    "-j"
-    jobs
-    "-x"
-    "osx"
-    "@install"
-  ]
+  ["dune" "build" "-p" "saturn_lockfree" "-j" jobs "-x" "osx" "@install"]
+  ["rm" "%{name}%.install"]
 ]
 dev-repo: "git+https://github.com/ocaml-multicore/saturn.git"
 url {
@@ -37,3 +28,4 @@ url {
   ]
 }
 x-commit-hash: "60dd353c9b9b6fae8a3a61d0fcf30d599e0a68a9"
+install: ["dune" "install" "-x" "osx" "-p" "saturn_lockfree"]

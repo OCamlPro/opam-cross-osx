@@ -30,11 +30,10 @@ We provides implementation of:
 """
 
 build: [
-  [ "dune" "build" "-p" "digestif" "-x" "osx" "-j" jobs ]
+  ["dune" "build" "-p" "digestif" "-x" "osx" "-j" jobs]
+  ["rm" "%{name}%.install"]
 ]
-install:  [
-]
-
+install: ["dune" "install" "-x" "osx" "-p" "digestif"]
 depends: [
   "ocaml-osx"
   "dune"            {>= "2.6.0"}
